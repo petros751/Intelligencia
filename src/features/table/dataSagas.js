@@ -4,6 +4,7 @@ import { fetchDataCall } from '../../utils/apiCalls';
 
 function* fetchDataSagas(action) {
   try {
+    console.log(action.payload);
     const res = yield call(fetchDataCall, action.payload);
     if (res.error && res.error === 'Could not authenticate user') {
       console.log(res.error);

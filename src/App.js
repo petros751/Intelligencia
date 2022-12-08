@@ -1,11 +1,12 @@
 import Navbar from './features/core/Navbar';
-import TableCompnent from './features/table/TableComponent';
+import MainComponent from './features/MainComponent';
+import './style/main.css'
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <TableCompnent />
+      <MainComponent />
     </div>
   );
 }

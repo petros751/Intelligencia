@@ -1,0 +1,17 @@
+.pagination-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    align-items: center;
+    }
+    
+  .pagination-wrapper .logs-pagination {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+    
+  .pagination-wrapper .logs-pagination .logs-pagination-pagesize {
+    margin-right: 2rem;
+  }

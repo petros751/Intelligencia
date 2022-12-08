@@ -12,7 +12,11 @@ export const dataSlice = createSlice({
   initialState,
   reducers: {
     setData: (state, action) => {
-      state.data = action.payload;
+      state.data = action.payload._embedded.terms;
+      state.limit = 15;
+      state.skip = 0;
+      state.totalData = action.payload.page.totalElements;
+      state.activePage = action.payload.page.number;
     },
     fetchData: () => {},
   },
