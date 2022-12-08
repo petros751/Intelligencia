@@ -1,13 +1,10 @@
-import {
-    LOGIN_URL,
-  } from './apiUrls';
-  import { request } from './request';
+import { GET_DATA_URL } from './apiUrls';
+import { request } from './request';
   
   export const fetchDataCall = async (payload) => {
     const requestOptions = {
-      url: LOGIN_URL,
-      method: 'POST',
-      body: payload,
+      url: GET_DATA_URL,
+      method: 'GET',
     };
   
     let response;

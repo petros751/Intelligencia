@@ -8,6 +8,7 @@ function* fetchDataSagas(action) {
     if (res.error && res.error === 'Could not authenticate user') {
       console.log(res.error);
     } else {
+      console.log('RESPNSE: ', res);
       yield put(setData(res));
     }
   } catch (err) {
