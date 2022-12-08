@@ -1,0 +1,10 @@
+const baseURI = 'https://dummyjson.com'
+export const LOGIN_URL = `${baseURI}/auth/login`;
+export const GET_USERS = `${baseURI}/users`;
+export const GET_PRODUCTS = `${baseURI}/products`;
+export const GET_CARTS = `${baseURI}/carts`;
+export const UPDATE_USER = `${baseURI}/users/`;
+export const CREATE_USER = `${baseURI}/users/add`;
+export const UPDATE_PRODUCT = `${baseURI}/products/`;
+export const CREATE_PRODUCT = `${baseURI}/products/add`;
+export const DELETE_PRODUCT = `${baseURI}/products/`;
