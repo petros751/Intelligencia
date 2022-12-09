@@ -132,11 +132,11 @@ const TableCompnent = () => {
                                 <b>-</b>
                                 <b>
                                     {
-                                        Math.min(skip + limit, totalItems)
+                                    Math.min(skip + limit, totalItems)
                                     }
                                 </b>
                                 {' '}
-                  out of
+                                out of
                                 {' '}
                                 <b>{totalItems}</b>
                             </span>

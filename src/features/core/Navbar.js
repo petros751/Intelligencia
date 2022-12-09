@@ -4,7 +4,7 @@ function NavBar () {
   return (
     <Menu inverted>
       <Menu.Item>
-        <img className="logoNavbar" src="../icons8-control-panel-48.png" />
+        <img className="logoNavbar" src="../OLS_logo.png" />
       </Menu.Item>
     </Menu>
   );

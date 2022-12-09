@@ -2,7 +2,6 @@ import { GET_DATA_URL } from './apiUrls';
 import { request } from './request';
   
   export const fetchDataCall = async (queryParams) => {
-    // ?page=1&size=20
     const requestOptions = {
       url: `${GET_DATA_URL}?page=${queryParams.skip ? queryParams.skip : 0}&size=${queryParams.limit ? queryParams.limit : 15}`,
       method: 'GET',
