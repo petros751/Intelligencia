@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Table, Dimmer, Loader, Header, Pagination, Dropdown, Grid } from 'semantic-ui-react';
+import { Table, Dimmer, Loader, Header, Pagination, Dropdown } from 'semantic-ui-react';
 import { dataSliceSelector, fetchData } from './dataSlice';
-import ChartComponent from '../chart/ChartComponent'
 
-const MINIMUM_PAGE_SIZE = 15;
 const INITIAL_FETCH_PARAMS = () => ({
     limit: 15,
     activePage: 0
@@ -64,16 +62,11 @@ const TableCompnent = () => {
     };
 
     const getPageSizeOptions = () => {
-        const options = [MINIMUM_PAGE_SIZE, 50, 100].reduce((acc, cur) => {
-            if (totalItems > cur) {
-                acc.push({ key: cur, value: cur, text: cur });
-            }
-            return acc;
-        }, []);
-        if (options.length < 3) {
-            options.push({ key: totalItems, value: totalItems, text: totalItems });
-        }
-
+        const options = [
+            {key: 15, value: 15, text: 15},
+            {key: 50, value: 50, text: 50},
+            {key: 100, value: 100, text: 100}
+        ]
         return options;
     };
 
@@ -86,9 +79,7 @@ const TableCompnent = () => {
     };
 
     return (
-        <Grid divided='vertically'>
-        <Grid.Row columns={2}>
-          <Grid.Column>
+        <div>
           <Table singleLine>
                 <Table.Header>
                     <Table.Row>
@@ -137,12 +128,7 @@ const TableCompnent = () => {
                 }
                 </div>
             </div>
-          </Grid.Column>
-          <Grid.Column style={{margin: 'auto'}}>
-            <ChartComponent />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+      </div>
     );
 };
 
