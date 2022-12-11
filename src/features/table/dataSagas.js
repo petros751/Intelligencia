@@ -1,6 +1,8 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
-import { setData, fetchData } from './dataSlice';
+import { setData, fetchData, setChartData } from './dataSlice';
 import { fetchDataCall } from '../../utils/apiCalls';
+import { duplicateItem } from '../chart/chartOptionsService';
+import _ from 'lodash';
 
 function* fetchDataSagas(action) {
   try {
@@ -11,6 +13,21 @@ function* fetchDataSagas(action) {
     } else {
       console.log('RESPNSE: ', res);
       yield put(setData(res));
+      let tempArray = [];
+      let categories = [];
+      _.forEach(res._embedded.terms, function(value) {
+        _.forEach(value.label.split(" "), function(value) {
+          tempArray.push(value.toLowerCase())
+        })
+        // setDataChart(duplicateItem(tempArray))
+        categories = _.uniq(tempArray);
+      });
+      console.log('tempArray: ', tempArray);
+      const data = yield call(duplicateItem, tempArray)
+      const chartData = {categories, data}
+      console.log('chartData: ', chartData);
+      yield put(setChartData(chartData))
+      
     }
   } catch (err) {
     console.error('New error', err);

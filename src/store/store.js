@@ -10,6 +10,7 @@ const sagaMiddleware = createSagaMiddleware();
 // Create the store middlewares array, to include saga middleware
 const middleware = [...getDefaultMiddleware({ thunk: false, serializableCheck: false }), sagaMiddleware];
 
+// EXAMPLE: Dynamic value that can be configured by the .env file regarding the environment.
 const devMode = 'development';
 
 if (devMode) {

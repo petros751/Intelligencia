@@ -5,6 +5,8 @@ const DATA_SLICE = 'DATA';
 
 const initialState = {
   data: [],
+  categories: [],
+  dataChart: [],
 };
 
 export const dataSlice = createSlice({
@@ -18,6 +20,10 @@ export const dataSlice = createSlice({
       state.totalData = action.payload.page.totalElements;
       state.activePage = action.payload.page.number;
     },
+    setChartData:(state, action) => {
+      state.categories = action.payload.categories;
+      state.dataChart = action.payload.data;
+    },
     fetchData: () => {},
   },
 });
@@ -25,6 +31,7 @@ export const dataSlice = createSlice({
 export const {
   fetchData,
   setData,
+  setChartData
 } = dataSlice.actions;
 
 export const dataSliceSelector = (state) => state.data;

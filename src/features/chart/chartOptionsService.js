@@ -1,34 +1,41 @@
-import Highcharts from 'highcharts';
-const createChartOptions = () => ({
+const duplicateItem = (arr) => {
+  const countObj = {};
+  arr.forEach((arrItem)=> {
+    countObj[arrItem] = ++countObj[arrItem] || 1;
+  });
+  const values = Object.values(countObj);
+  return values;
+};
+
+const createChartOptions = (categories, dateChart, max) => ({
     chart: {
         type: 'bar'
       },
       title: {
-        text: 'Historic World Population by Region'
-      },
-      subtitle: {
-        text: 'Source: <a ' +
-          'href="https://en.wikipedia.org/wiki/List_of_continents_and_continental_subregions_by_population"' +
-          'target="_blank">Wikipedia.org</a>'
+        text: `Label's words`
       },
       xAxis: {
-        categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+        min: 0,
+        max: max-1,
+        categories,
         title: {
-          text: null
+          text: 'Words Count'
         }
       },
       yAxis: {
         min: 0,
+        max: dateChart.reduce((a, b) => Math.max(a, b), -Infinity),
+        // Returns -Infinity if no parameters are provided.
+        // max: Math.max(...dateChart) is equivalent. But (...) will either fail 
+        // or return the wrong result if the array has too many elements.
+        // Because they try to pass the array elements as function parameters
         title: {
-          text: 'Population (millions)',
+          text: 'Record Count',
           align: 'high'
         },
         labels: {
-          overflow: 'justify'
+          overflow: 'justify',
         }
-      },
-      tooltip: {
-        valueSuffix: ' millions'
       },
       plotOptions: {
         bar: {
@@ -37,34 +44,11 @@ const createChartOptions = () => ({
           }
         }
       },
-      legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        x: -40,
-        y: 80,
-        floating: true,
-        borderWidth: 1,
-        backgroundColor:
-          Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-        shadow: true
-      },
-      credits: {
-        enabled: false
-      },
       series: [{
-        name: 'Year 1990',
-        data: [631, 727, 3202, 721, 26]
-      }, {
-        name: 'Year 2000',
-        data: [814, 841, 3714, 726, 31]
-      }, {
-        name: 'Year 2010',
-        data: [1044, 944, 4170, 735, 40]
-      }, {
-        name: 'Year 2018',
-        data: [1276, 1007, 4561, 746, 42]
-      }]
+        name: 'Record count',
+        data: dateChart
+      }
+    ]
   });
 
-  export { createChartOptions };
+  export { createChartOptions, duplicateItem };
