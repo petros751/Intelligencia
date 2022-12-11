@@ -7,6 +7,7 @@ const initialState = {
   data: [],
   categories: [],
   dataChart: [],
+  loadData: false,
 };
 
 export const dataSlice = createSlice({
@@ -24,6 +25,9 @@ export const dataSlice = createSlice({
       state.categories = action.payload.categories;
       state.dataChart = action.payload.data;
     },
+    setLoadData: (state, action) => {
+      state.loadData = action.payload;
+    },
     fetchData: () => {},
   },
 });
@@ -31,7 +35,8 @@ export const dataSlice = createSlice({
 export const {
   fetchData,
   setData,
-  setChartData
+  setChartData,
+  setLoadData
 } = dataSlice.actions;
 
 export const dataSliceSelector = (state) => state.data;

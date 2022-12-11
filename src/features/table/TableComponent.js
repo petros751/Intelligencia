@@ -12,7 +12,7 @@ const TableCompnent = () => {
     const [fetchDataParams, setFetchDataParams] = useState(INITIAL_FETCH_PARAMS);
     const [totalItems, setTotalItems] = useState(0);
     const [pageSize, setPageSize] = useState(15);
-    const { data, totalData, limit, activePage, totalPages } = useSelector(dataSliceSelector);
+    const { data, totalData, limit, activePage, totalPages, loadData } = useSelector(dataSliceSelector);
 
     const dispatch = useDispatch();
 
@@ -80,6 +80,15 @@ const TableCompnent = () => {
 
     return (
         <div>
+            <Dimmer active={loadData} inverted>
+                <Loader
+                    type="ThreeDots"
+                    color="#00BFFF"
+                    height={80}
+                    width={80}
+                    timeout={10000}
+                    className="spinner" />
+            </Dimmer>
           <Table singleLine>
                 <Table.Header>
                     <Table.Row>
