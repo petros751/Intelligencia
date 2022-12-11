@@ -19,3 +19,7 @@
 .pagination-wrapper .logs-pagination .logs-pagination-pagesize {
   margin-right: 2rem;
 }
+
+.ui.menu {
+  border-radius: 0% !important;
+  }
