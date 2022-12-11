@@ -1,6 +1,6 @@
 # Overview
 
-An interface where a user can fetch data from EFO through the OLS API ([https://www.ebi.ac.uk/ols/api/ontologies/efo/terms][[df7]]) in paginated Table.
+An interface where a user can fetch data from EFO through the OLS API (https://www.ebi.ac.uk/ols/api/ontologies/efo/terms[[df7]]) in paginated Table.
 Also per page it's avaliable chart of label's words.
 
 ## Installation
@@ -17,7 +17,7 @@ The underlying technology that it used for this project is JavaScript. The frame
 3. UI/UX: [Semantic React][df3]
 4. Redux Logic: [Redux Toolkit][df4]
 5. Redux logging tool: [Redux Logger][df5]
-6. Chart: [h=Highcharts][df6]
+6. Chart: [Highcharts][df6]
 
 
 
