@@ -1,6 +1,6 @@
 # Overview
 
-An interface where a user can fetch data from EFO through the OLS API (https://www.ebi.ac.uk/ols/api/ontologies/efo/terms[df7]) in paginated Table.
+An interface where a user can fetch data from EFO through the OLS API (https://www.ebi.ac.uk/ols/api/ontologies/efo/terms) in paginated Table.
 Also per page it's avaliable chart of label's words.
 
 ## Installation
