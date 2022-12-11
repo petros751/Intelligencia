@@ -3,7 +3,7 @@ import { request } from './request';
   
   export const fetchDataCall = async (queryParams) => {
     const requestOptions = {
-      url: `${GET_DATA_URL}?page=${queryParams.skip ? queryParams.skip : 0}&size=${queryParams.limit ? queryParams.limit : 15}`,
+      url: `${GET_DATA_URL}?page=${queryParams.activePage ? queryParams.activePage : 0}&size=${queryParams.limit ? queryParams.limit : 15}`,
       method: 'GET',
     };
   

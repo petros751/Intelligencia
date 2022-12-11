@@ -6,17 +6,16 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin-bottom: 3rem;
   align-items: center;
 }
     
-.pagination-wrapper .logs-pagination {
+.pagination-wrapper .item-pagination {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
 }
 
-.pagination-wrapper .logs-pagination .logs-pagination-pagesize {
+.pagination-wrapper .item-pagination {
   margin-right: 2rem;
 }
 

@@ -15,10 +15,10 @@ export const dataSlice = createSlice({
   reducers: {
     setData: (state, action) => {
       state.data = action.payload._embedded.terms;
-      state.limit = 15;
-      state.skip = 0;
+      state.limit = action.payload.page.size;
       state.totalData = action.payload.page.totalElements;
-      state.activePage = action.payload.page.number;
+      state.activePage = action.payload.page.number+1;
+      state.totalPages = action.payload.page.totalPages;
     },
     setChartData:(state, action) => {
       state.categories = action.payload.categories;
