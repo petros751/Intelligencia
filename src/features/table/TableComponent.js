@@ -64,8 +64,8 @@ const TableCompnent = () => {
     const getPageSizeOptions = () => {
         const options = [
             {key: 15, value: 15, text: 15},
-            {key: 50, value: 50, text: 50},
-            {key: 100, value: 100, text: 100}
+            {key: 20, value: 20, text: 20},
+            {key: 25, value: 25, text: 25}
         ]
         return options;
     };
