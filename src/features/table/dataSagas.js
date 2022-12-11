@@ -7,7 +7,6 @@ import _ from 'lodash';
 
 function* fetchDataSagas(action) {
   try {
-    console.log('action.payload: ', action.payload);
     const res = yield call(fetchDataCall, action.payload);
     if (res.error) {
       yield call(errorToastMessage, res.message);

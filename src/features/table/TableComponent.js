@@ -19,7 +19,6 @@ const TableCompnent = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log('fetchData');
         dispatch(fetchData(fetchDataParams));
     }, [fetchDataParams]);
 
